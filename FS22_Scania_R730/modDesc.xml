@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<modDesc descVersion="64">
+    <author>SimDala,Ap0lLo/Vanek1105</author>
+
+    <version>1.2.0.0</version>
+
+    <title>
+        <en>SCANIA V8 Loging</en>
+        <de>SCANIA V8-Anmeldung</de>
+    </title>
+
+    <description>
+        <en><![CDATA[SCANIA V8 Log Truck with movable banks
+Changelog 1.2.0.0
+- Debuged with TestRunner
+
+Changelog 1.1.0.0
+- Updated crane functionality
+- Added follow crane behaviour on crane camera
+- Updated timber bank movements
+- Brakes enhanced
+- Errorfixed]]></en>
+        <de><![CDATA[SCANIA V8 Log Truck mit beweglichen Bänken
+Änderungsprotokoll 1.2.0.0
+- Mit TestRunner debuggt
+
+Änderungsprotokoll 1.1.0.0
+- Aktualisierte Kranfunktionalität
+- Folge-Kran-Verhalten auf der Krankamera hinzugefügt
+- Holzbankbewegungen aktualisiert
+- Bremsen verbessert
+- Fehler behoben]]></de>
+    </description>
+
+    <iconFilename>store/icon.dds</iconFilename>
+
+    <multiplayer supported="true"/>
+    <storeItems>
+        <storeItem xmlFilename="ScaniaR730.xml"/>
+    </storeItems>
+
+    <brands>
+        <brand name="SCANIA" title="Scania" image="store/brand_scania.dds"/>
+    </brands>
+
+    <vehicleTypes>
+        <type name="Scania" parent="baseDrivable" className="Vehicle" filename="$dataS/scripts/vehicles/Vehicle.lua">
+            <specialization name="foldable"/>
+        </type>
+    </vehicleTypes>
+
+    <actions>
+        <action name="CHANGE_UNLOADING_TYPE_BUTTON" category="VEHICLE" ignoreComboMask="false"/>
+    </actions>
+
+</modDesc>
