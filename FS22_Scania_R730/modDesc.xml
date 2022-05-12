@@ -48,6 +48,14 @@ Changelog 1.1.0.0
             <specialization name="foldable"/>
         </type>
     </vehicleTypes>
+	<l10n>
+	
+	
+	<text name="input_CHANGE_UNLOADING_TYPE_BUTTON">
+			<en>Change unloading type</en>
+			<de>Entladeart ändern</de>
+		</text>
+	</l10n>
 
     <actions>
         <action name="CHANGE_UNLOADING_TYPE_BUTTON" category="VEHICLE" ignoreComboMask="false"/>

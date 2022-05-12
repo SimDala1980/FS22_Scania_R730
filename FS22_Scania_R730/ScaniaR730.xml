@@ -131,6 +131,7 @@
             <attachSound linkNode="0>" template="TRUCK_ATTACH_01" file="sounds/clunk.ogg"/>
             <schema invertX="false" position="1 0" rotation="0"/>
         </attacherJoint>
+
     </attacherJoints>
 
     <connectionHoses>
@@ -491,19 +492,19 @@
 			<!-- Crane rotation -->
             <movingTool node="armXRotPhysic" delayedNode="armXRot" playSound="true" >
                 <controls groupIndex="1" l10nName="label_arm" axis="AXIS_CRANE_ARM" invertAxis="true" mouseSpeedFactor="0.6" iconName="CRANE_ARM1_ROTATE_Y"/>
-                <rotation rotSpeed="35" rotAcceleration="50" rotationAxis="2" startRot="-5"/>
+                <rotation rotSpeed="35" rotAcceleration="80" rotationAxis="2" startRot="-5"/>
                 <componentJoint index="1" anchorActor="0"/>
             </movingTool>
 			<!-- Crane inner boom -->
             <movingTool node="mainArmPhysic" delayedNode="mainArm" playSound="true" >
                 <controls groupIndex="1" l10nName="label_arm" axis="AXIS_CRANE_ARM2" invertAxis="true" mouseSpeedFactor="0.5" iconName="CRANE_ARM1_ROTATE_X"/>
-                <rotation rotSpeed="30" rotAcceleration="40" rotMax="61.6" rotMin="-80" startRot="61.6" rotationAxis="1" rotSendNumBits="9"/>
+                <rotation rotSpeed="30" rotAcceleration="140" rotMax="61.6" rotMin="-80" startRot="61.6" rotationAxis="1" rotSendNumBits="9"/>
                 <componentJoint index="1" anchorActor="0"/>
             </movingTool>
 			<!-- Crane outer boom -->
             <movingTool node="secondArmPhysic" delayedNode="secondArm" playSound="true" >
                 <controls groupIndex="1" l10nName="label_arm" axis="AXIS_CRANE_ARM3" invertAxis="true" mouseSpeedFactor="0.5" iconName="CRANE_ARM2_ROTATE_X"/>
-                <rotation rotSpeed="30" rotAcceleration="40" rotMax="135" rotMin="-171.6" startRot="-171.6" rotationAxis="1" rotSendNumBits="10"/>
+                <rotation rotSpeed="30" rotAcceleration="120" rotMax="135" rotMin="-171.6" startRot="-171.6" rotationAxis="1" rotSendNumBits="10"/>
                 <componentJoint index="1" anchorActor="0"/>
             </movingTool>
             <!-- Crane telescope -->
@@ -533,7 +534,7 @@
             <!-- Grapple rotation -->
             <movingTool node="clawRotJoint" playSound="true">
                 <controls groupIndex="1" l10nName="label_arm" axis="AXIS_CRANE_TOOL2" invertAxis="true" mouseSpeedFactor="1" iconName="GRABBER_ROTATE_Y"/>
-                <rotation rotSpeed="-45" rotAcceleration="300" rotationAxis="2"/>
+                <rotation rotSpeed="-45" rotAcceleration="150" rotationAxis="2"/>
                 <componentJoint index="1" anchorActor="1"/>
             </movingTool>
             <!-- Grapple -->
@@ -644,7 +645,7 @@
     </logGrab>
 
     <ai>
-        <collisionTrigger node="aiCollisionTrigger" />
+        <collisionTrigger node="aiCollisionNode" width="3.2" height="4.0"/>
 		<allowTurnBackward value="false"/>
         <turningRadiusLimitation radius="8"/>
     </ai>
@@ -701,7 +702,11 @@
                 <tensionBelts linkNode="belts" rootNode="tgs18500_main_component1" jointNode="tgs18500_main_component1" activationTrigger="beltActivationTrigger" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="-0.45" defaultOffsetSide="0.1" defaultHeight="3" interactionRadius="1.75" totalInteractionRadius="3.5">
                     <tensionBelt startNode="beltStart1" endNode="beltEnd1" offsetLeft="0.85"/>
                     <tensionBelt startNode="beltStart2" endNode="beltEnd2" offsetRight="0.85"/>
-                </tensionBelts>
+                   <sounds>
+                        <addBelt template="beltOpen"/>
+                        <removeBelt template="beltClose"/>
+                    </sounds>
+                 </tensionBelts>
             </tensionBeltsConfiguration>
         </tensionBeltsConfigurations>
     </tensionBelts>
@@ -792,12 +797,6 @@
     <honk>
         <sound linkNode="0>" template="HONK_TRUCK"/>
     </honk>
-
-    <ai>
-        <allowTurnBackward value="false"/>
-        <collisionTrigger node="aiCollisionTrigger"/>
-        <turningRadiusLimitation radius="8"/>
-    </ai>
 
     <i3dMappings>
         <i3dMapping id="backElectric" node="0>19|0|1"/>
@@ -933,7 +932,7 @@
         <i3dMapping id="mirror3" node="0>12|0|5|1|1|0|0"/>
         <i3dMapping id="mirror4" node="0>12|0|5|1|3|0|0"/>
         <i3dMapping id="mirror5" node="0>12|0|5|2|0|0"/>
-        <i3dMapping id="aiCollisionTrigger" node="0>21|8"/>
+        <i3dMapping id="aiCollisionNode" node="0>21|8"/>
         <i3dMapping id="exhaustParticle" node="0>17|1"/>
         <i3dMapping id="exhaustParticle1" node="0>17|0"/>
         <i3dMapping id="additionalParts" node="0>12|2"/>
