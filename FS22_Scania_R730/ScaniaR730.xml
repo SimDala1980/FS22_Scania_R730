@@ -76,32 +76,32 @@
             <wheelConfiguration name="NOKIAN" price="14000" brand="NOKIAN">
                 <wheels autoRotateBackSpeed="2.2">
                     <wheel filename="nokianTires.xml" configId="man" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.4" repr="axisFrontLeft" driveNode="wheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.23" spring="55" damper="45" frictionScale="2"/>
+                        <physics rotSpeed="1" restLoad="2.4" repr="axisFrontLeft" driveNode="wheelFrontLeft" forcePointRatio="0.5" initialCompression="25" suspTravel="0.23" spring="55" damper="45" frictionScale="3.2"/>
                     </wheel>
                     <wheel filename="nokianTires.xml" configId="man" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="1" restLoad="2.4" repr="axisFrontRight" driveNode="wheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.23" spring="55" damper="45" frictionScale="2"/>
+                        <physics rotSpeed="1" restLoad="2.4" repr="axisFrontRight" driveNode="wheelFrontRight" forcePointRatio="0.5" initialCompression="25" suspTravel="0.23" spring="55" damper="45" frictionScale="3.2"/>
                     </wheel>
                     <wheel filename="nokianTires.xml" configId="dual" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackLeft1" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="1.9"/>
+                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackLeft1" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="3"/>
                         <additionalWheel filename="nokianTires.xml" isLeft="true" configId="dualConnector" offset="0.08"/>
                     </wheel>
                     <wheel filename="nokianTires.xml" configId="dual" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackRight1" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="1.9"/>
+                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackRight1" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="3"/>
                         <additionalWheel filename="nokianTires.xml" isLeft="false" configId="dualConnector" offset="0.08"/>
                     </wheel>
                     <wheel filename="nokianTires.xml" configId="dual" isLeft="true" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="1.9"/>
+                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackLeft" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="3"/>
                         <additionalWheel filename="nokianTires.xml" isLeft="true" configId="dualConnector" offset="0.08"/>
                     </wheel>
                     <wheel filename="nokianTires.xml" configId="dual" isLeft="false" hasTireTracks="true" hasParticles="true">
-                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="1.9"/>
+                        <physics rotSpeed="0" restLoad="1.6" repr="wheelBackRight" forcePointRatio="0.5" initialCompression="15" suspTravel="0.14" spring="49" damper="40" frictionScale="3"/>
                         <additionalWheel filename="nokianTires.xml" isLeft="false" configId="dualConnector" offset="0.08"/>
                     </wheel>
                 </wheels>
             </wheelConfiguration>
         </wheelConfigurations>
         <ackermannSteeringConfigurations>
-            <ackermannSteering rotSpeed="40" rotMax="45" rotCenterWheel1="5" rotCenterWheel2="6"/>
+            <ackermannSteering rotSpeed="40" rotMax="55" rotCenterWheel1="5" rotCenterWheel2="6"/>
         </ackermannSteeringConfigurations>
         <dynamicallyLoadedWheels>
             <dynamicallyLoadedWheel linkNode="ersatzrad" filename="$data/shared/wheels/tires/lizard/implement/315_80R22_5.xml" isLeft="true"/>
@@ -149,26 +149,31 @@
             <state lightTypes="0 1"/>
             <state lightTypes="0 1 2"/>
             <state lightTypes="0 1 2 3"/>
+			
+			<state lightTypes="0"/>
+			<state lightTypes="1"/>
+			<state lightTypes="2"/>
+			<state lightTypes="3"/>
+
         </states>
         <realLights>
             <low>
-                <light node="frontLightLow" lightTypes="0 1" excludedLightTypes="2 3"/>
-                <light node="highBeamLow" lightTypes="2"/>
-                <light node="highBeamHigh" lightTypes="2"/>
-                <light node="0>29|4" lightTypes="3"/>
-                <light node="workLightCraneLow" lightTypes="1"/>
+                <light node="frontLightLow" lightTypes="0 3" excludedLightTypes="1 2"/>
+             	<light node="0>29|4" lightTypes="3"/>
+                <light node="workLightCraneLow" lightTypes="2"/>
             </low>
             <high>
-                <light node="frontLightHigh" lightTypes="0 1" excludedLightTypes="2 3"/>
-                <light node="workLightFrontHigh1" lightTypes="2"/>
-                <light node="highBeamHigh" lightTypes="1"/>
-                <light node="backLightsHigh1" lightTypes="0"/>
-                <light node="0>29|4" lightTypes="3"/>
-                <light node="0>18|40" lightTypes="0"/>
-                <light node="0>18|47" lightTypes="0"/>
+				<light node="highBeamLow" lightTypes="2"/>
+				<light node="highBeamHigh" lightTypes="3"/>
+				<light node="frontLightHigh" lightTypes="0 3" excludedLightTypes="1 2"/>
+                <light node="workLightFrontHigh1" lightTypes="3"/>
+                <light node="backLightsHigh1" lightTypes="4"/>
+                <light node="0>29|4" lightTypes="1"/>
+                <light node="0>18|40" lightTypes="1"/>
+                <light node="0>18|47" lightTypes="1"/>
                 <light node="Lightdisplay" lightTypes="0"/>
-                <light node="workLightCraneHigh01" lightTypes="1"/>
-                <light node="workLightCraneHigh02" lightTypes="1"/>
+                <light node="workLightCraneHigh01" lightTypes="2"/>
+                <light node="workLightCraneHigh02" lightTypes="2"/>
                 <turnLightLeft node="turnLightLeftFront"/>
                 <turnLightRight node="turnLightRightFront"/>
                 <brakeLight node="backLightsHigh1"/>
@@ -180,17 +185,17 @@
             <defaultLight shaderNode="glassStatic1" lightTypes="0 3"/>
             <defaultLight shaderNode="innerPartStatic2" lightTypes="0 3"/>
             <defaultLight shaderNode="glassStatic2" lightTypes="0 3"/>
-            <defaultLight shaderNode="0>29|0|0|0" lightTypes="3"/>
-            <defaultLight shaderNode="0>29|1|0|0" lightTypes="3"/>
-            <defaultLight shaderNode="0>29|2|0" lightTypes="3"/>
-            <defaultLight shaderNode="0>29|3|0" lightTypes="3"/>
+            <defaultLight shaderNode="0>29|0|0|0" lightTypes="2"/>
+            <defaultLight shaderNode="0>29|1|0|0" lightTypes="2"/>
+            <defaultLight shaderNode="0>29|2|0" lightTypes="2"/>
+            <defaultLight shaderNode="0>29|3|0" lightTypes="2"/>
             <defaultLight shaderNode="innerPartStatic3" lightTypes="1"/>
             <defaultLight shaderNode="innerPartStatic4" lightTypes="1"/>
-            <defaultLight shaderNode="hellaWorkingLightRound_02_fog1" lightTypes="2"/>
-            <defaultLight shaderNode="hellaWorkingLightRound_02_fog2" lightTypes="2"/>
-            <defaultLight shaderNode="hellaWorkingLightRound_02_fog3" lightTypes="2"/>
-            <defaultLight shaderNode="hellaWorkingLightRound_02_fog4" lightTypes="2"/>
-            <defaultLight shaderNode="light" lightTypes="0"/>
+            <defaultLight shaderNode="hellaWorkingLightRound_02_fog1" lightTypes="1"/>
+            <defaultLight shaderNode="hellaWorkingLightRound_02_fog2" lightTypes="1"/>
+            <defaultLight shaderNode="hellaWorkingLightRound_02_fog3" lightTypes="1"/>
+            <defaultLight shaderNode="hellaWorkingLightRound_02_fog4" lightTypes="1"/>
+            <defaultLight shaderNode="light" lightTypes="3"/>
             <defaultLight shaderNode="lightfront" lightTypes="1"/>
             <defaultLight shaderNode="lightback" lightTypes="2"/>
             <defaultLight shaderNode="0>18|32|0" lightTypes="0"/>
@@ -458,10 +463,10 @@
         </animation>
         <animation name="folding">
 		    <part node="skydd" startTime="0" endTime="2" startScale="1 1 1" endScale="1 0.039 1" shaderParameter="offsetUV" />
-            <part node="supportArmRight" startTime="0" endTime="1" startTrans="0 0 0" endTrans="-0.900 0 0"/>
-            <part node="supportArmLeft" startTime="0" endTime="1" startTrans="0 0 0" endTrans="0.900 0 0"/>
-            <part node="supportArmRightPunch" startTime="1" endTime="2" startTrans="0 0 0" endTrans="0 -0.48 0"/>
-            <part node="supportArmLeftPunch" startTime="1" endTime="2" startTrans="0 0 0" endTrans="0 -0.48 0"/>
+            <!-- <part node="supportArmRight" startTime="0" endTime="1" startTrans="0 0 0" endTrans="-0.900 0 0"/> -->
+            <!-- <part node="supportArmLeft" startTime="0" endTime="1" startTrans="0 0 0" endTrans="0.900 0 0"/> -->
+            <!-- <part node="supportArmRightPunch" startTime="1" endTime="2" startTrans="0 0 0" endTrans="0 -0.48 0"/> -->
+            <!-- <part node="supportArmLeftPunch" startTime="1" endTime="2" startTrans="0 0 0" endTrans="0 -0.48 0"/> -->
             <part node="epsCabLift" startTime="2" endTime="7" startTrans="0 -1.869 0" endTrans="0 0.529 0"/>
             <part node="outdoorCameraTarget" startTime="2" endTime="7" startTrans="0 1.889 -0.008" endTrans="0 1.889 -4"/>
 			<part node="0>30|4|0|1|0|4|1|1|0"    startTime="2.2" endTime="5" startTrans="0.072 3.508 0.572" endTrans="0.072 4.778 0.572" />
@@ -699,7 +704,7 @@
     <tensionBelts>
         <tensionBeltsConfigurations>
             <tensionBeltsConfiguration>
-                <tensionBelts linkNode="belts" rootNode="tgs18500_main_component1" jointNode="tgs18500_main_component1" activationTrigger="beltActivationTrigger" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="-0.45" defaultOffsetSide="0.1" defaultHeight="3" interactionRadius="1.75" totalInteractionRadius="3.5">
+                <tensionBelts linkNode="belts" rootNode="tgs18500_main_component1" jointNode="tgs18500_main_component1" activationTrigger="beltActivationTrigger" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="-0.45" defaultOffsetSide="0.1" defaultHeight="3.5" interactionRadius="0.75" totalInteractionRadius="3.75">
                     <tensionBelt startNode="beltStart1" endNode="beltEnd1" offsetLeft="0.85"/>
                     <tensionBelt startNode="beltStart2" endNode="beltEnd2" offsetRight="0.85"/>
                    <sounds>

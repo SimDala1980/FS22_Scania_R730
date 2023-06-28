@@ -2,7 +2,7 @@
 <modDesc descVersion="64">
     <author>SimDala,Ap0lLo/Vanek1105</author>
 
-    <version>1.2.0.0</version>
+    <version>1.2.5.1</version>
 
     <title>
         <en>SCANIA V8 Loging</en>
@@ -13,6 +13,7 @@
         <en><![CDATA[SCANIA V8 Log Truck with movable banks
 Changelog 1.2.0.0
 - Debuged with TestRunner
+- Updated crane functions
 
 Changelog 1.1.0.0
 - Updated crane functionality
@@ -23,6 +24,7 @@ Changelog 1.1.0.0
         <de><![CDATA[SCANIA V8 Log Truck mit beweglichen Bänken
 Änderungsprotokoll 1.2.0.0
 - Mit TestRunner debuggt
+- Aktualisierte Kranfunktionen
 
 Änderungsprotokoll 1.1.0.0
 - Aktualisierte Kranfunktionalität
